@@ -1,4 +1,6 @@
+# Activity 1 (Tuesday)
 
+## Multiply
 
 ``` javascript 
 
@@ -8,4 +10,7 @@ function multiply(a, b) {
 }
 
 ```
+
+## ASCII Total
+
 
