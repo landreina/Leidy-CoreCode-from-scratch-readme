@@ -145,6 +145,72 @@ function persistence(num) {
 
 ```
 
+# Extras 
 
+## Holiday VIII - Duty Free
 
+``` javascript 
+
+function dutyFree(normPrice, discount, hol){
+  let dicountPrice = (normPrice * discount) / 100;
+  let bottlesWithDicountPriceToCoverHoliday = hol / dicountPrice;
+  let roundedResult = Math.floor(bottlesWithDicountPriceToCoverHoliday);
+  return roundedResult;
+}
+
+``` 
+
+## Twice As Old
+
+``` javascript 
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let duplicatedSonAge = sonYearsOld * 2;
+  let ageDiference = dadYearsOld - duplicatedSonAge;
+  return Math.abs(ageDiference);
+}
+
+``` 
+
+## Valid Spacing
+
+``` javascript 
+
+function validSpacing(s) {
+  if(s.charAt(0) === ' ' || s.charAt(s.length - 1) === ' ') { 
+     return false;
+  }
+  
+  for(let i = 0; i < s.length; i++) {
+    if(s.charAt(i) === ' '){ 
+      if(i != 0 && s.charAt(i-1) === ' ') {
+        return false;
+      }
+      if(i != (s.length - 1) && s.charAt(i+1) === ' ') {
+        return false;
+      }
+    }
+  }
+  return true; 
+}
+
+``` 
+
+## Fake Binary
+
+``` javascript 
+
+function fakeBin(x) {
+  let resultDigits = '';
+  for (let i = 0; i < x.length; i++) {
+    if (parseInt(x[i]) < 5) {
+      resultDigits = resultDigits + '0';
+    } else {
+      resultDigits = resultDigits + '1';
+    }
+  }
+  return resultDigits;
+}
+
+``` 
 
