@@ -101,5 +101,81 @@ decodeMorse = function (morseCode) {
 
 ## Valid Parentheses
  
+``` javascript 
 
+function validParentheses(parens) {
+  let valid = 0;
+  for (let i = 0; i < parens.length; i++) {
+    if (parens[i] === ')') valid--;
+    if (parens[i] === '(') valid++;
+    if (valid < 0) return false;
+  }
+  return valid == 0;
+}
+
+``` 
+
+## Convert String To Camel Case
+
+``` javascript 
+
+function toCamelCase(str) {
+  return str
+    .replace(/-/g, '_')
+    .split('_')
+    .map((word, i) => (i > 0 ? word.toUpperCase()[0] + word.substr(1) : word))
+    .join('');
+}
+
+``` 
+
+## Unique In Order
+
+``` javascript 
+
+var uniqueInOrder = function (iterable) {
+  return [...iterable].filter((chr, i) => chr != iterable[i + 1]);
+}; 
+
+``` 
+
+# Activity 4 (Thursday)
+
+## Fold An Array
+
+``` javascript 
+
+function foldArray(a, n) {
+  const r = [],
+    c = a.slice();
+  while (c.length) r.push(c.pop() + (c.shift() || 0));
+  return n - 1 ? foldArray(r, n - 1) : r;
+}
+
+``` 
+
+## Encrypt This!
+
+``` javascript 
+
+function encrypt(word) {
+  if(word.length === 1) return `${word.charCodeAt(0)}`;
+  const charBackup = word[1];
+  word = word.replace(word[0], word.charCodeAt(0));
+  word = word.replace(charBackup, word[word.length-1]);
+  word = word.replace(/\w$/, charBackup);
+  return word;
+}
+
+var encryptThis = function(text) {
+  const textArray = text.split(' ');
+  let result = '';
+  textArray.forEach((w) => {
+    // result = `${result === '' ? '' : `${result} `}${encrypt(w)}`;
+    result = `${result} ${encrypt(w)}`;
+  })
+  return result.trim();
+}
+
+```
 
